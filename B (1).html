@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Infinity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tableau de bord -->
+    <div id="sidebar">
+        <h2>C-Infinity</h2>
+     <ul id="menu">
+    <li onclick="showSection('accueil')">🏠 Accueil</li>
+    <li onclick="showSection('apropos')">ℹ️ À propos</li>
+    <li onclick="showSection('publier')">📝 Publier</li>
+    <li onclick="showSection('explorer')">🔍 Explorer</li>
+</ul>
+<!-- Section Profil qui apparaît après l'inscription -->
+<ul id="profile-menu" class="hidden">
+    <li onclick="showSection('profil')">👤 Profil</li>
+    <ul class="sub-menu">
+        <li onclick="showSection('messages')">📩 Messages</li>
+        <li onclick="showSection('oeuvres')">🎨 Œuvres personnelles</li>
+    </ul>
+</ul>
+    </div>
+
+    <!-- Contenu principal -->
+    <div id="main-content">
+        
+        <!-- Section Accueil -->
+        <section id="accueil" class="section">
+            <h1>Bienvenue sur C-Infinity</h1>
+            <p>C-Infinity est une société de bandes dessinées où vous pouvez publier, explorer et interagir avec des œuvres incroyables.</p>
+        </section>
+
+        <!-- Section À propos -->
+        <section id="apropos" class="section hidden">
+            <h1>À propos de C-Infinity</h1>
+            <p>C-Infinity permet aux créateurs de partager leurs bandes dessinées et aux fans de découvrir de nouveaux talents.</p>
+        </section>
+
+        <!-- Section Publier -->
+        <section id="publier" class="section hidden">
+            <h1>Publier une œuvre</h1>
+            <div id="login-form">
+                <input type="text" id="username" placeholder="Nom">
+                <input type="email" id="email" placeholder="E-mail">
+                <input type="file" id="profile-pic" accept="image/*">
+                <button onclick="register()">Créer un compte</button>
+            </div>
+            <div id="publish-form" class="hidden">
+                <input type="text" id="title" placeholder="Titre de l'œuvre">
+                <textarea id="content" placeholder="Description"></textarea>
+                <input type="file" id="image-upload" accept="image/*">
+                <button onclick="publish()">Publier</button>
+            </div>
+        </section>
+   <!-- profil -->
+   <section id="profil" class="section hidden">
+    <h1>Mon Profil</h1>
+    <p>Bienvenue dans votre espace personnel.</p>
+</section>
+
+<section id="messages" class="section hidden">
+    <h1>Messages</h1>
+    <p>Aucun message pour l’instant.</p>
+</section>
+
+<section id="oeuvres" class="section hidden">
+    <h1>Vos Œuvres</h1>
+    <p>Liste des œuvres publiées par vous.</p>
+</section>
+        <!-- Section Explorer -->
+        <section id="explorer" class="section hidden">
+            <h1>Explorer les œuvres</h1>
+            <div id="gallery"></div>
+        </section>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
